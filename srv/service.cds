@@ -5,29 +5,17 @@ using { RiskManagement as my } from '../db/schema.cds';
 @path : '/service/RiskManagementService'
 service RiskManagementService
 {
-    // annotate BusinessPartners with @restrict :
-    // [
-    //     { grant : [ '*' ], to : [ 'RiskManager' ] },
-    //     { grant : [ '*' ], to : [ 'RiskViewer' ] },
-    //     { grant : [ '*' ], to : [ 'any' ] },
-    //     { grant : [ '*' ], to : [ 'authenticated-user' ] }
-    // ];
+    annotate Mitigations with @restrict :
+    [
+        { grant : [ '*' ], to : [ 'RiskManager' ] },
+        { grant : [ 'READ' ], to : [ 'RiskViewer' ] }
+    ];
 
-    // annotate Mitigations with @restrict :
-    // [
-    //     { grant : [ '*' ], to : [ 'RiskManager' ] },
-    //     { grant : [ '*' ], to : [ 'authenticated-user' ] },
-    //     { grant : [ '*' ], to : [ 'any' ] },
-    //     { grant : [ '*' ], to : [ 'RiskViewer' ] }
-    // ];
-
-    // annotate Risks with @restrict :
-    // [
-    //     { grant : [ '*' ], to : [ 'RiskManager' ] },
-    //     { grant : [ '*' ], to : [ 'RiskViewer' ] },
-    //     { grant : [ '*' ], to : [ 'any' ] },
-    //     { grant : [ '*' ], to : [ 'authenticated-user' ] }
-    // ];
+    annotate Risks with @restrict :
+    [
+        { grant : [ '*' ], to : [ 'RiskManager' ] },
+        { grant : [ 'READ' ], to : [ 'RiskViewer' ] }
+    ];
 
     entity BusinessPartners as
         projection on BusinessPartnerA2X.A_BusinessPartner
@@ -43,7 +31,7 @@ service RiskManagementService
     @odata.draft.enabled: 'true'
     entity Risks as
         projection on my.Risks;
-
+        
     @odata.draft.enabled: 'true'
     entity Mitigations as
         projection on my.Mitigations;

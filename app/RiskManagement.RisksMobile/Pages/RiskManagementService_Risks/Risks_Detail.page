@@ -1,0 +1,130 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/RisksMobile/Services/RiskManagementService.service",
+		"EntitySet": "Risks",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/RisksMobile/Rules/RiskManagementService/Risks/NavToRisks_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/RisksMobile/Actions/RiskManagementService/Risks/Risks_DetailPopover.action",
+				"Position": "Right",
+				"Caption": "More",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Risks_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{title}",
+						"Subhead": "{prio}",
+						"BodyText": "",
+						"Footnote": "{impact}",
+						"Description": "{descr}",
+						"StatusText": "{criticality}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{supplier_businesspartner}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "title",
+							"Value": "{title}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "prio",
+							"Value": "{prio}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "descr",
+							"Value": "{descr}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "impact",
+							"Value": "{impact}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "criticality",
+							"Value": "{criticality}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "supplier_businesspartner",
+							"Value": "{supplier_businesspartner}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "risks",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{createdBy}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ID}",
+						"Footnote": "{description}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{owner}",
+						"Subhead": "{createdAt}",
+						"SubstatusText": "{timeline}",
+						"OnPress": "/RisksMobile/Actions/RiskManagementService/Mitigations/NavToMitigations_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/risks",
+						"Service": "/RisksMobile/Services/RiskManagementService.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"Mitigations"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Risks_Detail"
+}

@@ -1,0 +1,87 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/RisksMobile/Services/RiskManagementService.service",
+		"EntitySet": "Mitigations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/RisksMobile/Rules/RiskManagementService/Mitigations/NavToMitigations_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/RisksMobile/Rules/RiskManagementService/Mitigations/Mitigations_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Mitigations_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{createdAt}",
+						"BodyText": "",
+						"Footnote": "{description}",
+						"Description": "{createdBy}",
+						"StatusText": "{owner}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{timeline}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "createdAt",
+							"Value": "{createdAt}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "createdBy",
+							"Value": "{createdBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "description",
+							"Value": "{description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "owner",
+							"Value": "{owner}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "timeline",
+							"Value": "{timeline}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Mitigations_Detail"
+}
